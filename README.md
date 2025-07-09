@@ -55,6 +55,8 @@ Bellman equations provide recursive definitions of value functions:
 
 
 ---
+**Why does the value at the current state depend on the next state?**
 
+Because in Reinforcement Learning, the value of being in a state is not just about the immediate reward, but also about the future rewards the agent expects after taking an action
 
 
