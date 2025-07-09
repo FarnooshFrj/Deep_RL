@@ -1,4 +1,59 @@
-# Deep_RL
+# Reinforcement Learning
+
+This repository contains notes, concepts, and code related to Reinforcement Learning (RL).
 
 ---
-Thanks to Markove Decision Process, we can describe every control tasks with four properties: (S, A, R, P)
+
+## Overview
+
+Reinforcement Learning problems are often modeled using a **Markov Decision Process (MDP)**, which is defined by four components:  
+**S** (States), **A** (Actions), **R** (Rewards), and **P** (Transition Probabilities).
+
+A key property of MDPs is the **Markov assumption**:  
+> The next state depends only on the current state and action, **not** on the sequence of past states (i.e., history-independent).
+
+### Types of MDPs:
+- **Finite vs Infinite MDPs** – depending on the number of states/actions
+- **Episodic vs Continuing MDPs** – whether episodes have an end or go on indefinitely
+
+---
+
+## Core Concepts
+
+- **Trajectory** vs **Episode**  
+  A trajectory is a sequence of states, actions, and rewards; an episode ends in a terminal state.
+
+- **Reward** vs **Return**  
+  Reward is the immediate feedback, while return is the sum of future rewards (possibly discounted).
+
+- **Discount Factor (γ)**  
+  Determines how much future rewards are taken into account. A value close to 1 means long-term rewards are prioritized.
+
+- **Policy (π)**  
+  A strategy used by the agent to choose actions:
+  - **Deterministic**: Always picks the same action for a given state  
+  - **Stochastic**: Samples actions from a probability distribution over actions
+
+- **Value Functions**  
+  - **State-value function**: *v(s)* — expected return from state *s*  
+  - **Action-value function**: *q(s, a)* — expected return from state *s* taking action *a*
+
+- **Goal of RL**  
+  Learn a policy that **maximizes the expected sum of discounted rewards** over time.
+
+---
+
+## Bellman Equations
+
+Bellman equations provide recursive definitions of value functions:
+
+- **For state-value function**:
+  $$ v(s) = \sum_{a} \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a) \left[ r + \gamma v(s') \right] $$
+
+- **For action-value function**:
+  $$ q(s, a) = \sum_{s', r} P(s', r \mid s, a) \left[ r + \gamma \sum_{a'} \pi(a' \mid s') q(s', a') \right] $$
+
+---
+
+
+
