@@ -47,11 +47,12 @@ A key property of MDPs is the **Markov assumption**:
 
 Bellman equations provide recursive definitions of value functions:
 
-- **For state-value function**:
-  $$ v(s) = \sum_{a} \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a) \left[ r + \gamma v(s') \right] $$
+- **For state-value function**:  
+  v(s) = Σₐ π(a|s) Σₛ′,r P(s′, r | s, a) [r + γ · v(s′)]
 
-- **For action-value function**:
-  $$ q(s, a) = \sum_{s', r} P(s', r \mid s, a) \left[ r + \gamma \sum_{a'} \pi(a' \mid s') q(s', a') \right] $$
+- **For action-value function**:  
+  q(s, a) = Σₛ′,r P(s′, r | s, a) [r + γ · Σₐ′ π(a′|s′) · q(s′, a′)]
+
 
 ---
 
